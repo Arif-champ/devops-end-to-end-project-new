@@ -21,7 +21,7 @@ Learn Git fundamentals, set up GitHub, and create a structured DevOps project re
 ## 1. Git Installation & Verification
 - Installed Git on local system
 - Verified installation:
-```bash
+bash
 git --version
 
 git config --global user.name "Your Name"
@@ -29,7 +29,7 @@ git config --global user.email "your-email@example.com"
 
 ## 2. Git Configuration
 - Configured global Git username and email to track commits:
-```bash
+bash
 git config --global user.name "Your Name"
 git config --global user.email "your-email@example.com"
 
@@ -59,7 +59,7 @@ git status
 
 ## 7. Git Basics Practiced
 - Practiced essential Git commands:
-```bash
+bash
 git clone    # Clone a remote repository
 git pull     # Fetch and merge changes from remote
 git push     # Push local commits to remote
@@ -75,28 +75,29 @@ git log      # View commit history
 
 This helped reinforce proper Git repository structure and version control best practices.
 
-## Day 2 – AWS EC2 and Apache Web Server Setup
 
-### Objective
+# Day 2 – AWS EC2 and Apache Web Server Setup
+
+## Objective
 Launch an EC2 instance on AWS and deploy an Apache web server.
 
-### Web Access Verification
+## Web Access Verification
 The Apache default test page was accessed successfully using the EC2
 public IP address through a web browser.validate compute, networking, and basic server configuration.
 
-### EC2 Instance Setup
+## EC2 Instance Setup
 An EC2 instance was launched using Amazon Linux with a t3.micro
 instance type. A key pair was created for secure SSH access, and a
 security group was configured to allow SSH (port 22) and HTTP
 (port 80) traffic Custom Tcp (port 3000) and Custom TCP (Port 9090).
 
-### SSH Access
+## SSH Access
 The EC2 instance was accessed securely using SSH and a PEM key file,
 confirming successful connectivity to the server.
 
 ![EC2 Instance Running](screenshots/Screenshot_day-2_Devops_Project_EC2_instance_Running.png)
 
-### Apache Web Server Installation
+## Apache Web Server Installation
 Apache HTTP Server was installed, started, and enabled to run on
 system startup.
 
@@ -106,7 +107,7 @@ sudo systemctl start httpd
 sudo systemctl enable httpd
 
 
-### Service Validation
+## Service Validation
 The Apache service status was verified, and it was confirmed that the
 server was listening on port 80.
 
@@ -115,7 +116,7 @@ sudo systemctl status httpd
 sudo netstat -tulnp | grep 80
 
 
-### Web Access Verification
+## Web Access Verification
 The Apache default test page was accessed successfully using the EC2
 public IP address through a web browser.
 
