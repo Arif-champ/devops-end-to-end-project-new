@@ -45,7 +45,7 @@ git config --global user.email "your-email@example.com"
 ## 4. Project Repository Creation
 - Created a new repository on GitHub
 - Initialized Git in the local project directory:
-```bash
+bash
 git init
 
 ## 5. Project Structure Setup
@@ -54,7 +54,7 @@ git init
 
 ## 6. First Commit & Push
 - Checked the current status of the repository:
-```bash
+bash
 git status
 
 ## 7. Git Basics Practiced
@@ -95,7 +95,7 @@ security group was configured to allow SSH (port 22) and HTTP
 The EC2 instance was accessed securely using SSH and a PEM key file,
 confirming successful connectivity to the server.
 
-![EC2 Instance Running](screenshots/Screenshot_day-2_Devops_Project_EC2_instance_Running.png)
+![EC2 Instance Running]
 
 ## Apache Web Server Installation
 Apache HTTP Server was installed, started, and enabled to run on
@@ -120,7 +120,7 @@ sudo netstat -tulnp | grep 80
 The Apache default test page was accessed successfully using the EC2
 public IP address through a web browser.
 
-![Apache Web Page](screenshots/Screenshot_day2_apache_works.png)
+![Apache Web Page]
 
 
 DELL@DESKTOP-86KP568 MINGW64 /d/devops-end-to-end-project (main)
