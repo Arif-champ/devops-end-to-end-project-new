@@ -1,102 +1,129 @@
-# devOps-end-to-end-project-new
+# DevOps End-to-End Project
 
-This project demonstrates a complete DevOps lifecycle using:
-- Git & GitHub
-- AWS
-- Terraform
-- Ansible
-- Docker
-- CI/CD
-- Prometheus & Grafana
+## Project Overview
 
-This repository will be built step by step.
+This repository showcases a complete, production-aligned DevOps lifecycle implemented using industry-standard tools and practices. The project is built incrementally, with each phase focusing on a specific layer of the DevOps workflow—from source control and infrastructure provisioning to configuration management, containerization, CI/CD, and monitoring.
 
-# Day 1 – Git, GitHub & Project Foundation
-##objective
-Learn Git fundamentals, set up GitHub, and create a structured DevOps project repository.
+The approach emphasizes clean repository structure, secure cloud practices, and validation at every stage, reflecting how DevOps solutions are implemented and maintained in real-world environments.
 
 ---
 
-## 1. Git Installation & Verification
-- Installed Git on local system
-- Verified installation:
+## Technology Stack
+
+* *Version Control:* Git & GitHub
+* *Cloud Platform:* AWS
+* *Infrastructure as Code:* Terraform
+* *Configuration Management:* Ansible
+* *Containerization:* Docker
+* *CI/CD:* Jenkins / GitHub Actions (planned)
+* *Monitoring & Observability:* Prometheus & Grafana
+
+---
+
+## Day 1 – Git, GitHub & Project Foundation
+
+### Objective
+
+Establish a solid project foundation using Git and GitHub, with a clean repository structure suitable for scaling DevOps workflows.
+
+---
+
+### Git Installation & Configuration
+
+* Installed Git on the local system and verified the installation.
+* Configured global username and email to ensure proper commit attribution and traceability.
+
 bash
 git --version
+git config --global user.name "<username>"
+git config --global user.email "<email>"
 
-git config --global user.name "Arif-champ"
-git config --global user.email "arif641006@gmail.com"
 
-## 2. Git Configuration
-- Configured global Git username and email to track commits:
-bash
-git config --global user.name "Arif-champ"
-git config --global user.email "arif641006@gmail.com"
+---
 
-## 3. GitHub Setup
-- Logged into GitHub account
-- Created a new repository for the DevOps project
-- Understood core GitHub concepts:
-  - Repositories for source code management
-  - Commits to track changes
-  - Branches for feature and version control
-- Learned how GitHub integrates with Git for version control and collaboration
+### GitHub Repository Setup
 
-## 4. Project Repository Creation
-- Created a new repository on GitHub
-- Initialized Git in the local project directory:
+* Logged into GitHub and created a dedicated repository for the DevOps project.
+* Established the connection between the local repository and GitHub.
+* Followed standard GitHub practices for managing repositories, commits, and branches.
+
+---
+
+### Project Structure Initialization
+
+* Initialized Git within the local project directory.
+* Designed a structured directory layout aligned with DevOps tooling and automation stages.
+* Ensured the repository was clean, readable, and easy to extend in later phases.
+
 bash
 git init
 
-## 5. Project Structure Setup
-- Created a structured directory layout to support DevOps tools and workflows
-- Organized folders based on tool usage and automation stages:
 
-## 6. First Commit & Push
-- Checked the current status of the repository:
+---
+
+### First Commit & Version Control Practices
+
+* Verified repository status before committing changes.
+* Performed the initial commit and pushed it to the remote repository.
+* Practiced essential Git commands used in day-to-day DevOps workflows.
+
 bash
 git status
+git clone
+git pull
+git push
+git log
 
-## 7. Git Basics Practiced
-- Practiced essential Git commands:
-bash
-git clone    # Clone a remote repository
-git pull     # Fetch and merge changes from remote
-git push     # Push local commits to remote
-git log      # View commit history
 
-## Troubleshooting & Lessons Learned
+---
 
-- Git does not track empty directories by default.
-- Empty project folders were not visible on GitHub until a .gitkeep file was added.
-- Ensured all work was done inside the Git repository directory containing the .git folder.
-- Verified file tracking using git status, ls -a, and pwd.
+### Troubleshooting & Lessons Learned
 
-This helped reinforce proper Git repository structure and version control best practices.
+* Git does not track empty directories by default.
+* Empty folders were not visible on GitHub until a .gitkeep file was added.
+* Ensured all work was performed inside the directory containing the .git folder.
+* Validated file tracking and repository context using git status, ls -a, and pwd.
 
-# Day 2 – AWS EC2 and Apache Web Server Setup
+These checks reinforced correct repository structure and version control best practices commonly followed in team environments.
 
-## Objective
-Launch an EC2 instance on AWS and deploy an Apache web server.
+---
 
-## Web Access Verification
-The Apache default test page was accessed successfully using the EC2
-public IP address through a web browser.validate compute, networking, and basic server configuration.
+## Day 2 – AWS EC2 and Apache Web Server Setup
 
-## EC2 Instance Setup
-An EC2 instance was launched using Amazon Linux with a t3.micro
-instance type. A key pair was created for secure SSH access, and a
-security group was configured to allow SSH (port 22) and HTTP
-(port 80) traffic Custom Tcp (port 3000) and Custom TCP (Port 9090).
+### Objective
 
-## SSH Access
-The EC2 instance was accessed securely using SSH and a PEM key file,
-confirming successful connectivity to the server.
+Provision an EC2 instance on AWS and deploy an Apache web server to validate compute resources, networking, and basic server configuration.
+
+---
+
+### EC2 Instance Provisioning
+
+* Launched an EC2 instance using *Amazon Linux* with a *t3.micro* instance type.
+* Created a key pair for secure SSH-based access.
+* Configured a security group with the following inbound rules:
+
+  * SSH (port 22)
+  * HTTP (port 80)
+  * Custom TCP (port 3000)
+  * Custom TCP (port 9090)
+
+This configuration supports both web access and future integrations such as CI/CD pipelines and monitoring tools.
+
+---
+
+### SSH Connectivity Validation
+
+* Accessed the EC2 instance securely using SSH and the PEM key file.
+* Successful login confirmed correct subnet routing, internet gateway configuration, and security group rules.
 
 [EC2 Instance Running]
 
-## Apache Web Server Installation
-Apache HTTP Server was installed, started, and enabled to run on
-system startup.
+---
+
+### Apache Web Server Installation
+
+* Installed Apache HTTP Server on the EC2 instance.
+* Started the service and enabled it to launch automatically on system startup.
 
 bash
 sudo yum install httpd -y
@@ -104,20 +131,188 @@ sudo systemctl start httpd
 sudo systemctl enable httpd
 
 
-## Service Validation
-The Apache service status was verified, and it was confirmed that the
-server was listening on port 80.
+---
+
+### Service & Port Validation
+
+* Verified the Apache service status.
+* Confirmed that the server was actively listening on port 80.
 
 bash
 sudo systemctl status httpd
 sudo netstat -tulnp | grep 80
 
 
-## Web Access Verification
-The Apache default test page was accessed successfully using the EC2
-public IP address through a web browser.
+---
+
+### Web Access Verification
+
+* Accessed the Apache default test page using the EC2 public IP address via a web browser.
+* This validated end-to-end connectivity across the compute, networking, and application layers.
 
 [Apache Web Page]
 
+---
 
-Welcome@DESKTOP-CR672IP MINGW64 /d/devops-end-to-end-project-new (main)
+## Project Status
+
+The base infrastructure and web layer are stable and ready for the next phases, including infrastructure automation, configuration management, containerization, and CI/CD integration.# DevOps End-to-End Project
+
+## Project Overview
+
+This repository showcases a complete, production-aligned DevOps lifecycle implemented using industry-standard tools and practices. The project is built incrementally, with each phase focusing on a specific layer of the DevOps workflow—from source control and infrastructure provisioning to configuration management, containerization, CI/CD, and monitoring.
+
+The approach emphasizes clean repository structure, secure cloud practices, and validation at every stage, reflecting how DevOps solutions are implemented and maintained in real-world environments.
+
+---
+
+## Technology Stack
+
+* *Version Control:* Git & GitHub
+* *Cloud Platform:* AWS
+* *Infrastructure as Code:* Terraform
+* *Configuration Management:* Ansible
+* *Containerization:* Docker
+* *CI/CD:* Jenkins / GitHub Actions (planned)
+* *Monitoring & Observability:* Prometheus & Grafana
+
+---
+
+## Day 1 – Git, GitHub & Project Foundation
+
+### Objective
+
+Establish a solid project foundation using Git and GitHub, with a clean repository structure suitable for scaling DevOps workflows.
+
+---
+
+### Git Installation & Configuration
+
+* Installed Git on the local system and verified the installation.
+* Configured global username and email to ensure proper commit attribution and traceability.
+
+bash
+git --version
+git config --global user.name "<username>"
+git config --global user.email "<email>"
+
+
+---
+
+### GitHub Repository Setup
+
+* Logged into GitHub and created a dedicated repository for the DevOps project.
+* Established the connection between the local repository and GitHub.
+* Followed standard GitHub practices for managing repositories, commits, and branches.
+
+---
+
+### Project Structure Initialization
+
+* Initialized Git within the local project directory.
+* Designed a structured directory layout aligned with DevOps tooling and automation stages.
+* Ensured the repository was clean, readable, and easy to extend in later phases.
+
+bash
+git init
+
+
+---
+
+### First Commit & Version Control Practices
+
+* Verified repository status before committing changes.
+* Performed the initial commit and pushed it to the remote repository.
+* Practiced essential Git commands used in day-to-day DevOps workflows.
+
+bash
+git status
+git clone
+git pull
+git push
+git log
+
+
+---
+
+### Troubleshooting & Lessons Learned
+
+* Git does not track empty directories by default.
+* Empty folders were not visible on GitHub until a .gitkeep file was added.
+* Ensured all work was performed inside the directory containing the .git folder.
+* Validated file tracking and repository context using git status, ls -a, and pwd.
+
+These checks reinforced correct repository structure and version control best practices commonly followed in team environments.
+
+---
+
+## Day 2 – AWS EC2 and Apache Web Server Setup
+
+### Objective
+
+Provision an EC2 instance on AWS and deploy an Apache web server to validate compute resources, networking, and basic server configuration.
+
+---
+
+### EC2 Instance Provisioning
+
+* Launched an EC2 instance using *Amazon Linux* with a *t3.micro* instance type.
+* Created a key pair for secure SSH-based access.
+* Configured a security group with the following inbound rules:
+
+  * SSH (port 22)
+  * HTTP (port 80)
+  * Custom TCP (port 3000)
+  * Custom TCP (port 9090)
+
+This configuration supports both web access and future integrations such as CI/CD pipelines and monitoring tools.
+
+---
+
+### SSH Connectivity Validation
+
+* Accessed the EC2 instance securely using SSH and the PEM key file.
+* Successful login confirmed correct subnet routing, internet gateway configuration, and security group rules.
+
+[EC2 Instance Running]
+
+---
+
+### Apache Web Server Installation
+
+* Installed Apache HTTP Server on the EC2 instance.
+* Started the service and enabled it to launch automatically on system startup.
+
+bash
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+
+---
+
+### Service & Port Validation
+
+* Verified the Apache service status.
+* Confirmed that the server was actively listening on port 80.
+
+bash
+sudo systemctl status httpd
+sudo netstat -tulnp | grep 80
+
+
+---
+
+### Web Access Verification
+
+* Accessed the Apache default test page using the EC2 public IP address via a web browser.
+* This validated end-to-end connectivity across the compute, networking, and application layers.
+
+[Apache Web Page]
+
+---
+
+## Project Status
+
+The base infrastructure and web layer are stable and ready for the next phases, including infrastructure automation, configuration management, containerization, and CI/CD integration.
+
