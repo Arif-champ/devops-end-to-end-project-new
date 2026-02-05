@@ -1,4 +1,4 @@
-# DevOps End-to-End Project
+# devOps-end-to-end-project-new
 
 This project demonstrates a complete DevOps lifecycle using:
 - Git & GitHub
@@ -12,8 +12,7 @@ This project demonstrates a complete DevOps lifecycle using:
 This repository will be built step by step.
 
 # Day 1 – Git, GitHub & Project Foundation
-
-## Objective
+##objective
 Learn Git fundamentals, set up GitHub, and create a structured DevOps project repository.
 
 ---
@@ -24,14 +23,14 @@ Learn Git fundamentals, set up GitHub, and create a structured DevOps project re
 bash
 git --version
 
-git config --global user.name "Your Name"
-git config --global user.email "your-email@example.com"
+git config --global user.name "Arif-champ"
+git config --global user.email "arif641006@gmail.com"
 
 ## 2. Git Configuration
 - Configured global Git username and email to track commits:
 bash
-git config --global user.name "Your Name"
-git config --global user.email "your-email@example.com"
+git config --global user.name "Arif-champ"
+git config --global user.email "arif641006@gmail.com"
 
 ## 3. GitHub Setup
 - Logged into GitHub account
@@ -65,7 +64,6 @@ git pull     # Fetch and merge changes from remote
 git push     # Push local commits to remote
 git log      # View commit history
 
-
 ## Troubleshooting & Lessons Learned
 
 - Git does not track empty directories by default.
@@ -74,7 +72,6 @@ git log      # View commit history
 - Verified file tracking using git status, ls -a, and pwd.
 
 This helped reinforce proper Git repository structure and version control best practices.
-
 
 # Day 2 – AWS EC2 and Apache Web Server Setup
 
@@ -95,7 +92,7 @@ security group was configured to allow SSH (port 22) and HTTP
 The EC2 instance was accessed securely using SSH and a PEM key file,
 confirming successful connectivity to the server.
 
-![EC2 Instance Running]
+[EC2 Instance Running]
 
 ## Apache Web Server Installation
 Apache HTTP Server was installed, started, and enabled to run on
@@ -120,7 +117,7 @@ sudo netstat -tulnp | grep 80
 The Apache default test page was accessed successfully using the EC2
 public IP address through a web browser.
 
-![Apache Web Page]
+[Apache Web Page]
 
 
-DELL@DESKTOP-86KP568 MINGW64 /d/devops-end-to-end-project (main)
+Welcome@DESKTOP-CR672IP MINGW64 /d/devops-end-to-end-project-new (main)
